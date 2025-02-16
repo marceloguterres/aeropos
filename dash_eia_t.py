@@ -4,13 +4,6 @@ import matplotlib.pyplot as plt
 from datetime import datetime
 import numpy as np
 
-# Verificar se o Streamlit está instalado
-try:
-    import streamlit as st
-except ModuleNotFoundError:
-    print("Erro: O módulo 'streamlit' não está instalado. Execute 'pip install streamlit' para instalá-lo.")
-    exit()
-
 # Configuração da página
 st.set_page_config(page_title="AeroPos", layout="wide")
 
@@ -21,12 +14,8 @@ st.markdown("### Análise e Registro de Operações da Pós-graduação em Infra
 # Carregar a base de dados
 try:
     df = pd.read_excel("base_de_dados_eia_t.ods", engine="odf")
-
 except FileNotFoundError:
-    st.error("Erro: O arquivo 'data/base_de_dados_eia_t.ods' não foi encontrado. Verifique o caminho do arquivo.")
-    st.stop()
-except Exception as e:
-    st.error(f"Erro ao carregar os dados: {e}")
+    st.error("Arquivo 'base_de_dados_eia_t.ods' não encontrado. Verifique se o arquivo está na mesma pasta do script.")
     st.stop()
     
     

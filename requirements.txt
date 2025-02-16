@@ -1,0 +1,6 @@
+streamlit
+pandas
+matplotlib
+numpy
+odfpy  # Para ler arquivos .ods
+datetime
